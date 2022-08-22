@@ -2,14 +2,18 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const Characters = ({ title, setTitle }) => {
+const Characters = ({ name, setName, page, setPage, limit, setLimit }) => {
   const [data, setdata] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3002/characters");
+        const response = await axios.get(
+          `http://localhost:3002/characters?name=${name ? name : ""}&page=${
+            page ? page : ""
+          }&limit=${limit}`
+        );
         setdata(response.data);
         // console.log("datacharacter >>>", response.data.characters);
         // console.log("numberOgPages >>>", response.data.numberOfPages);
@@ -19,7 +23,7 @@ const Characters = ({ title, setTitle }) => {
       setIsLoading(false);
     };
     fetchData();
-  }, []);
+  }, [name, page, limit]);
 
   const charachtersArray = data.characters;
   // console.log("array >>>", charachtersArray);

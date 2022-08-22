@@ -8,20 +8,50 @@ import CommicsWithCharacters from "./pages/ComicsWithCharacters";
 import { useState } from "react";
 
 function App() {
+  const [name, setName] = useState("");
   const [title, setTitle] = useState("");
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(100);
   return (
     <div>
       <Router>
-        <Header title={title} setTitle={setTitle} />
+        <Header
+          name={name}
+          setName={setName}
+          title={title}
+          setTitle={setTitle}
+          page={page}
+          setPage={setPage}
+          limit={limit}
+          setLimit={setLimit}
+        />
         <Routes>
           <Route
             path="/"
-            element={<Characters title={title} setTitle={setTitle} />}
+            element={
+              <Characters
+                name={name}
+                setName={setName}
+                page={page}
+                setPage={setPage}
+                limit={limit}
+                setLimit={setLimit}
+              />
+            }
           />
 
           <Route
             path="/comics"
-            element={<Comics title={title} setTitle={setTitle} />}
+            element={
+              <Comics
+                title={title}
+                setTitle={setTitle}
+                page={page}
+                setPage={setPage}
+                limit={limit}
+                setLimit={setLimit}
+              />
+            }
           />
 
           <Route

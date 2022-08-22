@@ -17,7 +17,7 @@ body {
 h2 {
   text-align: center;
   font-size: 3rem;
-  margin-top: 40px;
+  margin-top: 80px;
   margin-bottom: 40px;
   color: white;
   text-shadow: 2px 2px 2px red;
@@ -91,6 +91,35 @@ h2 {
   background-image: url(./images/marvel.jpg);
   background-size: cover;
   background-position: top;
+}
+
+.header-pagination {
+  /* background-color: gold; */
+  width: 40%;
+  height: 70px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header-filters {
+  text-decoration: none;
+  outline: none;
+  border: none;
+  background-color: white;
+  border-radius: 5px;
+  border: 3px red solid;
+}
+
+.header-labels {
+  color: white;
 }
 
 /* PAGE CHARACTER */
