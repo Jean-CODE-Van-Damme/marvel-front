@@ -2,7 +2,16 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Comics = ({ title, setTitle, page, setPage, limit, setLimit }) => {
+const Comics = ({
+  title,
+  setTitle,
+  page,
+  setPage,
+  limit,
+  setLimit,
+  favoriteArray,
+  setFavoriteArray,
+}) => {
   const [data, setdata] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -51,13 +60,7 @@ const Comics = ({ title, setTitle, page, setPage, limit, setLimit }) => {
                         />
                       </div>
                     )}
-                    <div className="comics-favorite">
-                      <FontAwesomeIcon
-                        className="comics-icon-heart"
-                        icon="heart"
-                      />
-                      <p>Add to Favorites Comics</p>
-                    </div>
+
                     {element.description ? (
                       <div className="comics-description">
                         {element.description}
@@ -69,6 +72,20 @@ const Comics = ({ title, setTitle, page, setPage, limit, setLimit }) => {
                         </p>
                       </div>
                     )}
+                    <div
+                      className="comics-favorite"
+                      onClick={() => {
+                        let copyFavoriteArray = [...favoriteArray];
+                        copyFavoriteArray.push(element);
+                        setFavoriteArray(copyFavoriteArray);
+                      }}
+                    >
+                      <FontAwesomeIcon
+                        className="comics-icon-heart"
+                        icon="heart"
+                      />
+                      <p>Add to Favorites</p>
+                    </div>
                   </div>
                 );
               })}

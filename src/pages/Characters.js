@@ -3,7 +3,16 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Characters = ({ name, setName, page, setPage, limit, setLimit }) => {
+const Characters = ({
+  name,
+  setName,
+  page,
+  setPage,
+  limit,
+  setLimit,
+  favoriteArrayCharacter,
+  setFavoriteArrayCharacter,
+}) => {
   const [data, setdata] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -42,43 +51,56 @@ const Characters = ({ name, setName, page, setPage, limit, setLimit }) => {
                 let characterId = element._id;
                 // console.log("id >>>", characterId);
                 return (
-                  <Link
-                    to={`/comics/${characterId}`}
-                    className="character"
-                    key={characterId}
-                  >
-                    {element.name && (
-                      <div className="character-title">{element.name} </div>
-                    )}
-                    {element.picture && (
-                      <div className="character-img">
-                        <img
-                          src={element.picture}
-                          alt="representation du personnage"
-                        />
-                      </div>
-                    )}
+                  <>
+                    <div className="big-card">
+                      <Link
+                        className="character"
+                        to={`/comics/${characterId}`}
+                        key={characterId}
+                      >
+                        {element.name && (
+                          <div className="character-title">{element.name} </div>
+                        )}
+                        {element.picture && (
+                          <div className="character-img">
+                            <img
+                              src={element.picture}
+                              alt="representation du personnage"
+                            />
+                          </div>
+                        )}
 
-                    <div className="character-favorite">
-                      <FontAwesomeIcon
-                        className="character-icon-heart"
-                        icon="heart"
-                      />
-                      <p>Add to Favorites Heroes</p>
+                        {element.description ? (
+                          <div className="character-description">
+                            {element.description}
+                          </div>
+                        ) : (
+                          <div className="character-description">
+                            <p>
+                              Pas encore de descritpion disponible pour ce
+                              personnage
+                            </p>
+                          </div>
+                        )}
+                      </Link>
+                      <div
+                        className="character-favorite"
+                        onClick={() => {
+                          let copyFavoriteArrayCharacter = [
+                            ...favoriteArrayCharacter,
+                          ];
+                          copyFavoriteArrayCharacter.push(element);
+                          setFavoriteArrayCharacter(copyFavoriteArrayCharacter);
+                        }}
+                      >
+                        <FontAwesomeIcon
+                          className="character-icon-heart"
+                          icon="heart"
+                        />
+                        <p>Add to Favorites</p>
+                      </div>
                     </div>
-                    {element.description ? (
-                      <div className="character-description">
-                        {element.description}
-                      </div>
-                    ) : (
-                      <div className="character-description">
-                        <p>
-                          Pas encore de descritpion disponible pour ce
-                          personnage
-                        </p>
-                      </div>
-                    )}
-                  </Link>
+                  </>
                 );
               })}
             </div>

@@ -131,13 +131,12 @@ h2 {
 /* PAGE CHARACTER */
 
 .all-characters {
-  /* background-color: gold; */
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.character {
+.big-card {
   width: 31%;
   height: 500px;
   /* border: 2px red solid; */
@@ -148,13 +147,42 @@ h2 {
   margin-bottom: 50px;
   padding: 10px;
   background-color: white;
-  /* background-color: #ff0000; */
   border-radius: 10px;
   box-shadow: 5px 5px 5px #ff0000;
   text-decoration: none;
+  border: 4px black solid;
+}
+
+.character {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* margin-bottom: 50px; */
+  /* padding: 10px; */
+  background-color: white;
+  /* background-color: #ff0000; */
+  /* border-radius: 10px; */
+  /* box-shadow: 5px 5px 5px #ff0000; */
+  /* text-decoration: none; */
+  /* border: 3px blue solid; */
+}
+.character-favorite {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  padding: 3px;
+  background-color: black;
+  color: #ff0000;
+  padding: 10px;
 }
 
 .character-title {
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -169,7 +197,7 @@ h2 {
 
 .character-img {
   width: 100%;
-  height: 50%;
+  height: 40%;
   /* border: 4px blue solid; */
 }
 
@@ -181,24 +209,13 @@ h2 {
 }
 
 .character-icon-heart {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 
   font-size: 1.5rem;
   color: #ff0000;
-}
-
-.character-favorite {
-  width: 60%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: gold;
-  border-radius: 10px;
-  padding: 3px;
-  background-color: black;
-  color: white;
 }
 
 .character-description {
@@ -283,7 +300,7 @@ h2 {
 }
 
 .comics-favorite {
-  width: 60%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;

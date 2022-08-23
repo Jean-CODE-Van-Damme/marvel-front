@@ -20,6 +20,8 @@ function App() {
   const [title, setTitle] = useState("");
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(100);
+  const [favoriteArray, setFavoriteArray] = useState([]);
+  const [favoriteArrayCharacter, setFavoriteArrayCharacter] = useState([]);
   return (
     <div>
       <Router>
@@ -44,6 +46,10 @@ function App() {
                 setPage={setPage}
                 limit={limit}
                 setLimit={setLimit}
+                favoriteArray={favoriteArray}
+                setFavoriteArray={setFavoriteArray}
+                favoriteArrayCharacter={favoriteArrayCharacter}
+                setFavoriteArrayCharacter={setFavoriteArrayCharacter}
               />
             }
           />
@@ -58,6 +64,8 @@ function App() {
                 setPage={setPage}
                 limit={limit}
                 setLimit={setLimit}
+                favoriteArray={favoriteArray}
+                setFavoriteArray={setFavoriteArray}
               />
             }
           />
@@ -67,7 +75,17 @@ function App() {
             element={<CommicsWithCharacters />}
           />
 
-          <Route path="/favorites" element={<Favorites />} />
+          <Route
+            path="/favorites"
+            element={
+              <Favorites
+                favoriteArray={favoriteArray}
+                setFavoriteArray={setFavoriteArray}
+                favoriteArrayCharacter={favoriteArrayCharacter}
+                setFavoriteArrayCharacter={setFavoriteArrayCharacter}
+              />
+            }
+          />
         </Routes>
       </Router>
     </div>
