@@ -25,6 +25,18 @@ const Favorites = ({
       })} */}
       </section>
       <section className="favorite-characters"></section>
+      <h2>Favorites Heroes</h2>
+      {favoriteArrayCharacter.map((element) => {
+        return (
+          <div>
+            <div>{element.name}</div>
+            <div>
+              <img src={element.picture} alt="representation du Comics" />
+            </div>
+            <div>{element.description}</div>
+          </div>
+        );
+      })}
     </div>
   );
 };
