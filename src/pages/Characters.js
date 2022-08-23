@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Characters = ({ name, setName, page, setPage, limit, setLimit }) => {
   const [data, setdata] = useState({});
@@ -57,6 +58,14 @@ const Characters = ({ name, setName, page, setPage, limit, setLimit }) => {
                         />
                       </div>
                     )}
+
+                    <div className="character-favorite">
+                      <FontAwesomeIcon
+                        className="character-icon-heart"
+                        icon="heart"
+                      />
+                      <p>Add to Favorites Heroes</p>
+                    </div>
                     {element.description ? (
                       <div className="character-description">
                         {element.description}

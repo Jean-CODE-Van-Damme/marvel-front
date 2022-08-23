@@ -6,6 +6,14 @@ import Comics from "./pages/Comics";
 import Favorites from "./pages/Favorites";
 import CommicsWithCharacters from "./pages/ComicsWithCharacters";
 import { useState } from "react";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faEnvelope,
+  faKey,
+  faListAlt,
+  faHeart,
+} from "@fortawesome/free-solid-svg-icons";
+library.add(faEnvelope, faKey, faListAlt, faHeart);
 
 function App() {
   const [name, setName] = useState("");
