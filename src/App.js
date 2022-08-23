@@ -4,6 +4,9 @@ import Header from "./components/Header";
 import Characters from "./pages/Characters";
 import Comics from "./pages/Comics";
 import Favorites from "./pages/Favorites";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+import Cookies from "js-cookie";
 import CommicsWithCharacters from "./pages/ComicsWithCharacters";
 import { useState } from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -22,6 +25,7 @@ function App() {
   const [limit, setLimit] = useState(100);
   const [favoriteArray, setFavoriteArray] = useState([]);
   const [favoriteArrayCharacter, setFavoriteArrayCharacter] = useState([]);
+  const [tokenCookie, setTokenCookie] = useState(Cookies.get("cookie") || null);
   return (
     <div>
       <Router>
@@ -83,6 +87,24 @@ function App() {
                 setFavoriteArray={setFavoriteArray}
                 favoriteArrayCharacter={favoriteArrayCharacter}
                 setFavoriteArrayCharacter={setFavoriteArrayCharacter}
+              />
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <Signup
+                tokenCookie={tokenCookie}
+                setTokenCookie={setTokenCookie}
+              />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <Login
+                tokenCookie={tokenCookie}
+                setTokenCookie={setTokenCookie}
               />
             }
           />

@@ -52,14 +52,20 @@ const Header = ({
             ) : null}
 
             <Link className="link-button" to="/">
-              <button>Personnages</button>
+              <button>Heroes</button>
             </Link>
 
             <Link className="link-button" to="/comics">
               <button>Comics</button>
             </Link>
             <Link className="link-button" to="/favorites">
-              <button>Favoris</button>
+              <button>Favorites</button>
+            </Link>
+            <Link to="/signup" className="link-button">
+              <button>Signup</button>
+            </Link>
+            <Link to="/login" className="link-button">
+              <button>Login</button>
             </Link>
           </div>
           <div className="header-div-bottom"></div>
