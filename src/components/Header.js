@@ -70,54 +70,105 @@ const Header = ({
           </div>
           <div className="header-div-bottom"></div>
 
-          <div className="header-pagination">
-            <div className="pagination">
-              <input
-                className="header-filters"
-                type="number"
-                min="0"
-                id="page"
-                value={page}
-                onChange={(event) => {
-                  setPage(Number(event.target.value));
-                }}
-              />
-              <label className="header-labels" htmlFor="page">
-                Page
-              </label>
-            </div>
+          {location.pathname === "/comics" ? (
+            <div className="header-pagination">
+              <div className="pagination">
+                <input
+                  className="header-filters"
+                  type="number"
+                  min="0"
+                  id="page"
+                  value={page}
+                  onChange={(event) => {
+                    setPage(Number(event.target.value));
+                  }}
+                />
+                <label className="header-labels" htmlFor="page">
+                  Page
+                </label>
+              </div>
 
-            <div className="pagination">
-              <input
-                className="header-filters"
-                type="number"
-                min="0"
-                id="page"
-                value={limit}
-                onChange={(event) => {
-                  setLimit(Number(event.target.value));
-                }}
-              />
-              {/* ternaire dans une ternaire  */}
-              {location.pathname === "/comics" ? (
-                <label className="header-labels" htmlFor="limit">
-                  Comics
-                </label>
-              ) : location.pathname === "/" ? (
-                <label className="header-labels" htmlFor="limit">
-                  Heroes
-                </label>
-              ) : location.pathname === "/favorites" ? (
-                <label className="header-labels" htmlFor="limit">
-                  Favorites Comics and Heroes
-                </label>
-              ) : (
-                <label className="header-labels" htmlFor="limit">
-                  Comics with your hero
-                </label>
-              )}
+              <div className="pagination">
+                <input
+                  className="header-filters"
+                  type="number"
+                  min="0"
+                  id="page"
+                  value={limit}
+                  onChange={(event) => {
+                    setLimit(Number(event.target.value));
+                  }}
+                />
+                {/* ternaire dans une ternaire  */}
+                {location.pathname === "/comics" ? (
+                  <label className="header-labels" htmlFor="limit">
+                    Comics
+                  </label>
+                ) : location.pathname === "/" ? (
+                  <label className="header-labels" htmlFor="limit">
+                    Heroes
+                  </label>
+                ) : location.pathname === "/favorites" ? (
+                  <label className="header-labels" htmlFor="limit">
+                    Favorites Comics and Heroes
+                  </label>
+                ) : (
+                  <label className="header-labels" htmlFor="limit">
+                    Comics with your hero
+                  </label>
+                )}
+              </div>
             </div>
-          </div>
+          ) : location.pathname === "/" ? (
+            <div className="header-pagination">
+              <div className="pagination">
+                <input
+                  className="header-filters"
+                  type="number"
+                  min="0"
+                  id="page"
+                  value={page}
+                  onChange={(event) => {
+                    setPage(Number(event.target.value));
+                  }}
+                />
+                <label className="header-labels" htmlFor="page">
+                  Page
+                </label>
+              </div>
+
+              <div className="pagination">
+                <input
+                  className="header-filters"
+                  type="number"
+                  min="0"
+                  id="page"
+                  value={limit}
+                  onChange={(event) => {
+                    setLimit(Number(event.target.value));
+                  }}
+                />
+                {/* ternaire dans une ternaire  */}
+                {location.pathname === "/comics" ? (
+                  <label className="header-labels" htmlFor="limit">
+                    Comics
+                  </label>
+                ) : location.pathname === "/" ? (
+                  <label className="header-labels" htmlFor="limit">
+                    Heroes
+                  </label>
+                ) : location.pathname === "/favorites" ? (
+                  <label className="header-labels" htmlFor="limit">
+                    Favorites Comics and Heroes
+                  </label>
+                ) : (
+                  <label className="header-labels" htmlFor="limit">
+                    Comics with your hero
+                  </label>
+                )}
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
     </header>
