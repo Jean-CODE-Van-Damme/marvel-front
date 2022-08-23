@@ -44,7 +44,7 @@ const Login = ({ tokenCookie, setTokenCookie }) => {
   };
 
   return (
-    <div>
+    <div className="login-page">
       <h2>Login</h2>
       <form
         onSubmit={(event) => {
@@ -52,7 +52,7 @@ const Login = ({ tokenCookie, setTokenCookie }) => {
           fetchData();
         }}
       >
-        <div>
+        <div className="login-div">
           <label htmlFor="email">Email</label>
           <input
             type="text"
@@ -65,7 +65,7 @@ const Login = ({ tokenCookie, setTokenCookie }) => {
           />
         </div>
 
-        <div>
+        <div className="login-div">
           <label htmlFor="password">Password</label>
           <input
             type="text"
@@ -80,7 +80,7 @@ const Login = ({ tokenCookie, setTokenCookie }) => {
         {isLoading ? <p>Chargement</p> : <button>Login</button>}
 
         <Link to="/signup">
-          <p className="login-form-p">Pas encore de compte ? Inscris-toi !</p>
+          <p className="login-end">Pas encore de compte ? Inscris-toi !</p>
         </Link>
         {!tokenCookie && (
           <p>Merci de vous connecter pour voir les offres ou en publier</p>

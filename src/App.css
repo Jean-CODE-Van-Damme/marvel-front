@@ -425,3 +425,115 @@ h2 {
 .comic-with-character-descitpion::-webkit-scrollbar {
   display: none;
 }
+
+/* ROUTE SIGNUP */
+
+.signup-page {
+  background-color: black;
+  height: 700px;
+}
+
+.signup-page form {
+  padding: 20px;
+  width: 60%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 5px;
+  /* border: 2px red solid; */
+}
+
+.signup-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+  height: 10%;
+  /* border: 2px yellow solid; */
+  border-bottom: 1px #ff0000 solid;
+}
+
+.signup-div input {
+  border: none;
+  height: 60%;
+  border-radius: 5px;
+}
+
+.signup-div label {
+  font-size: 1.2rem;
+  color: #ff0000;
+}
+
+.signup-page button {
+  width: 50%;
+  height: 10%;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #ff0000;
+}
+
+.signup-end {
+  color: #ff0000;
+}
+
+/* ROUTE LOGIN */
+
+.login-page {
+  background-color: black;
+  height: 500px;
+}
+
+.login-page form {
+  padding: 20px;
+  width: 60%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 5px;
+  /* border: 2px red solid; */
+}
+
+.login-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+  height: 10%;
+  /* border: 2px yellow solid; */
+  border-bottom: 1px #ff0000 solid;
+}
+
+.login-div input {
+  border: none;
+  height: 60%;
+  border-radius: 5px;
+}
+
+.login-div label {
+  font-size: 1.2rem;
+  color: #ff0000;
+}
+
+.login-page button {
+  width: 50%;
+  height: 10%;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #ff0000;
+}
+
+.login-end {
+  color: #ff0000;
+}
