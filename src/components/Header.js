@@ -103,7 +103,7 @@ const Header = ({
                 </label>
               ) : location.pathname === "/favorites" ? (
                 <label className="header-labels" htmlFor="limit">
-                  Favorite Comics and Heroes
+                  Favorites Comics and Heroes
                 </label>
               ) : (
                 <label className="header-labels" htmlFor="limit">

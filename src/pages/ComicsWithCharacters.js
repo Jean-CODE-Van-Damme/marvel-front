@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 
 const CommicsWithCharacters = () => {
   const [data, setData] = useState({});
+  const [data2, setData2] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { characterId } = useParams();
   // console.log("characterId >>>", characterId);
@@ -15,8 +16,14 @@ const CommicsWithCharacters = () => {
           `http://localhost:3002/comics/${characterId}`
         );
 
+        const response2 = await axios.get(
+          `http://localhost:3002/character/${characterId}`
+        );
+
         setData(response.data);
-        console.log("response >>>", response.data);
+        setData2(response2.data);
+        // console.log("response >>>", response.data);
+        // console.log("characterName >>>", response2.data.character_name);
       } catch (error) {
         console.log(error.response);
       }
@@ -25,8 +32,9 @@ const CommicsWithCharacters = () => {
     fetchData();
   }, [characterId]);
 
+  let nameOfPrincipalCharacter = data2.character_name;
   const comicswithcharacterArray = data.arrayOfComics;
-  console.log("comicswithcharacterArray >>>", comicswithcharacterArray);
+  // console.log("comicswithcharacterArray >>>", comicswithcharacterArray);
 
   return (
     <>
@@ -35,7 +43,8 @@ const CommicsWithCharacters = () => {
           <p>Chargement</p>
         ) : (
           <div>
-            <h2>Commics with your favorite Character</h2>
+            <h2>Commics with {nameOfPrincipalCharacter}</h2>
+
             <div className="container">
               <div className="comic-with-character-principal">
                 <img
@@ -44,10 +53,11 @@ const CommicsWithCharacters = () => {
                   alt="representation du personnage choisi"
                 />
               </div>
+
               <div className="all-comic-with-character">
                 {comicswithcharacterArray.map((element) => {
                   return (
-                    <div className="comic-with-character">
+                    <div className="comic-with-character" key={element._id}>
                       {element.title && (
                         <div className="comic-with-character-title">
                           {element.title}

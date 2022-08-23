@@ -34,7 +34,7 @@ const Characters = ({ name, setName, page, setPage, limit, setLimit }) => {
         <p>Chargement</p>
       ) : (
         <div>
-          <h2>Characters</h2>
+          <h2>Heroes</h2>
           <div className="container">
             <div className="all-characters">
               {charachtersArray.map((element) => {

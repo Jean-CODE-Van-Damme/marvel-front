@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const Comics = ({ title, setTitle }) => {
+const Comics = ({ title, setTitle, page, setPage, limit, setLimit }) => {
   const [data, setdata] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -9,7 +9,9 @@ const Comics = ({ title, setTitle }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3002/comics?title=${title ? title : ""}`
+          `http://localhost:3002/comics?title=${title ? title : ""}&page=${
+            page ? page : ""
+          }&limit=${limit && limit}`
         );
         setdata(response.data);
         // console.log("dataComics >>>", response.data);
@@ -20,7 +22,7 @@ const Comics = ({ title, setTitle }) => {
     };
 
     fetchData();
-  }, [title]);
+  }, [title, page, limit]);
 
   const comicsArray = data.comics;
   // console.log("comicsArray >>>", comicsArray);
