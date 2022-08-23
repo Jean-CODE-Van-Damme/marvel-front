@@ -12,31 +12,32 @@ const Favorites = ({
     <div>
       <section className="favorite-comics">
         <h2>Favorites Comics</h2>
-        {/* {favoriteArray.map((element) => {
-        return (
-          <div>
-            <div>{element.title}</div>
+        {favoriteArray.map((element) => {
+          return (
             <div>
-              <img src={element.picture} alt="representation du Comics" />
+              <div>{element.title}</div>
+              <div>
+                <img src={element.picture} alt="representation du Comics" />
+              </div>
+              <div>{element.description}</div>
             </div>
-            <div>{element.description}</div>
-          </div>
-        );
-      })} */}
+          );
+        })}
       </section>
-      <section className="favorite-characters"></section>
-      <h2>Favorites Heroes</h2>
-      {favoriteArrayCharacter.map((element) => {
-        return (
-          <div>
-            <div>{element.name}</div>
+      <section className="favorite-characters">
+        <h2>Favorites Heroes</h2>
+        {favoriteArrayCharacter.map((element) => {
+          return (
             <div>
-              <img src={element.picture} alt="representation du Comics" />
+              <div>{element.name}</div>
+              <div>
+                <img src={element.picture} alt="representation du Comics" />
+              </div>
+              <div>{element.description}</div>
             </div>
-            <div>{element.description}</div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </section>
     </div>
   );
 };
