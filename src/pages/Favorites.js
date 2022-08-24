@@ -13,34 +13,57 @@ const Favorites = ({
   // console.log(favoriteArray[0].title);
   return tokenCookie ? (
     <div>
-      <section className="favorite-comics">
-        <h2>Favorites Comics</h2>
-        {favoriteArray.map((element) => {
-          return (
-            <div>
-              <div>{element.title}</div>
-              <div>
-                <img src={element.picture} alt="representation du Comics" />
-              </div>
-              <div>{element.description}</div>
-            </div>
-          );
-        })}
-      </section>
-      <section className="favorite-characters">
-        <h2>Favorites Heroes</h2>
-        {favoriteArrayCharacter.map((element) => {
-          return (
-            <div>
-              <div>{element.name}</div>
-              <div>
-                <img src={element.picture} alt="representation du Comics" />
-              </div>
-              <div>{element.description}</div>
-            </div>
-          );
-        })}
-      </section>
+      <div className="container">
+        <section>
+          <h2>Favorites Comics</h2>
+          <div className="favorite-comics">
+            {favoriteArray.map((element) => {
+              return (
+                <div className="favorite-comic">
+                  <div className="favorite-comic-name">{element.title}</div>
+                  <div className="favorite-comic-img">
+                    <img src={element.picture} alt="representation du Comics" />
+                  </div>
+                  {element.description ? (
+                    <div className="favorite-comic-description">
+                      {element.description}
+                    </div>
+                  ) : (
+                    <div className="favorite-comic-description">
+                      <p>No descitpion yet</p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </section>
+        <section>
+          <h2>Favorites Heroes</h2>
+          <div className="favorite-characters">
+            {favoriteArrayCharacter.map((element) => {
+              return (
+                <div className="favorite-character">
+                  <div className="favorite-character-name">{element.name}</div>
+                  <div className="favorite-character-img">
+                    <img src={element.picture} alt="representation du Comics" />
+                  </div>
+
+                  {element.description ? (
+                    <div className="favorite-character-description">
+                      {element.description}
+                    </div>
+                  ) : (
+                    <div className="favorite-character-description">
+                      <p>No descitpion yet</p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      </div>
     </div>
   ) : (
     <Navigate to="/login" />

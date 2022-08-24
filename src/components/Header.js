@@ -169,22 +169,14 @@ const Header = ({
                     setLimit(Number(event.target.value));
                   }}
                 />
-                {/* ternaire dans une ternaire  */}
+
                 {location.pathname === "/comics" ? (
                   <label className="header-labels" htmlFor="limit">
                     Comics
                   </label>
-                ) : location.pathname === "/" ? (
-                  <label className="header-labels" htmlFor="limit">
-                    Heroes
-                  </label>
-                ) : location.pathname === "/favorites" ? (
-                  <label className="header-labels" htmlFor="limit">
-                    Favorites Comics and Heroes
-                  </label>
                 ) : (
                   <label className="header-labels" htmlFor="limit">
-                    Comics with your hero
+                    Heroes
                   </label>
                 )}
               </div>

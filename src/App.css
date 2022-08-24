@@ -8,9 +8,9 @@ a {
   color: inherit;
 }
 
-section {
+/* section {
   color: white;
-}
+} */
 
 body {
   background-color: black;
@@ -554,4 +554,115 @@ h2 {
 
 .login-end {
   color: #ff0000;
+}
+
+/* FAVORITE PAGE  */
+
+.favorite-comics {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-radius: 10px;
+  padding: 10px;
+
+  /* padding: 20px; */
+}
+
+.favorite-characters {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 10px;
+  padding: 10px;
+
+  /* padding: 20px; */
+}
+
+.favorite-comic {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 31%;
+  height: 450px;
+  border: 2px red solid;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.favorite-character {
+  width: 31%;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px red solid;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.favorite-comic-name {
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #ff0000;
+  border-radius: 10px;
+}
+
+.favorite-comic-img {
+  width: 100%;
+  height: 40%;
+}
+
+.favorite-comic-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.favorite-comic-description {
+  width: 100%;
+  height: 40%;
+  overflow: auto;
+}
+
+.favorite-comic-description::-webkit-scrollbar {
+  display: none;
+}
+
+.favorite-character-name {
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #ff0000;
+}
+
+.favorite-character-img {
+  width: 100%;
+  height: 40%;
+}
+
+.favorite-character-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.favorite-character-description {
+  width: 100%;
+  height: 40%;
+  overflow: auto;
+}
+
+.favorite-character-description::-webkit-scrollbar {
+  display: none;
 }

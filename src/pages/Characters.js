@@ -76,10 +76,7 @@ const Characters = ({
                           </div>
                         ) : (
                           <div className="character-description">
-                            <p>
-                              Pas encore de descritpion disponible pour ce
-                              personnage
-                            </p>
+                            <p>No desciption yet</p>
                           </div>
                         )}
                       </Link>

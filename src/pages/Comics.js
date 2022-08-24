@@ -70,9 +70,7 @@ const Comics = ({
                       </div>
                     ) : (
                       <div className="comics-description">
-                        <p>
-                          Pas encore de description disponible pour ce Comics
-                        </p>
+                        <p>No desciption yet</p>
                       </div>
                     )}
                     <div
