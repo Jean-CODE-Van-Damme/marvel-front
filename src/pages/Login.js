@@ -68,7 +68,7 @@ const Login = ({ tokenCookie, setTokenCookie }) => {
         <div className="login-div">
           <label htmlFor="password">Password</label>
           <input
-            type="text"
+            type="password"
             id="password"
             placeholder="Marvel12345"
             value={password}
@@ -83,7 +83,7 @@ const Login = ({ tokenCookie, setTokenCookie }) => {
           <p className="login-end">Pas encore de compte ? Inscris-toi !</p>
         </Link>
         {!tokenCookie && (
-          <p>Merci de vous connecter pour voir les offres ou en publier</p>
+          <p>Please connect you to access Comics and Favorites pages</p>
         )}
       </form>
     </div>

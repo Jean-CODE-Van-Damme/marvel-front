@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 
-const CommicsWithCharacters = () => {
+const CommicsWithCharacters = ({ tokenCookie, setTokenCookie }) => {
   const [data, setData] = useState({});
   const [data2, setData2] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -36,7 +36,7 @@ const CommicsWithCharacters = () => {
   const comicswithcharacterArray = data.arrayOfComics;
   // console.log("comicswithcharacterArray >>>", comicswithcharacterArray);
 
-  return (
+  return tokenCookie ? (
     <>
       <div>
         {isLoading ? (
@@ -91,6 +91,8 @@ const CommicsWithCharacters = () => {
         )}
       </div>
     </>
+  ) : (
+    <Navigate to="/login" />
   );
 };
 

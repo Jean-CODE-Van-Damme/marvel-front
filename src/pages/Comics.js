@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Navigate } from "react-router-dom";
 
 const Comics = ({
   title,
@@ -11,6 +12,8 @@ const Comics = ({
   setLimit,
   favoriteArray,
   setFavoriteArray,
+  tokenCookie,
+  setTokenCookie,
 }) => {
   const [data, setdata] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -37,7 +40,7 @@ const Comics = ({
   const comicsArray = data.comics;
   // console.log("comicsArray >>>", comicsArray);
 
-  return (
+  return tokenCookie ? (
     <div>
       {isLoading ? (
         <p>Chargement</p>
@@ -94,6 +97,8 @@ const Comics = ({
         </div>
       )}
     </div>
+  ) : (
+    <Navigate to="/login" />
   );
 };
 

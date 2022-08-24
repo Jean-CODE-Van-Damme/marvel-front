@@ -38,6 +38,8 @@ function App() {
           setPage={setPage}
           limit={limit}
           setLimit={setLimit}
+          tokenCookie={tokenCookie}
+          setTokenCookie={setTokenCookie}
         />
         <Routes>
           <Route
@@ -70,13 +72,20 @@ function App() {
                 setLimit={setLimit}
                 favoriteArray={favoriteArray}
                 setFavoriteArray={setFavoriteArray}
+                tokenCookie={tokenCookie}
+                setTokenCookie={setTokenCookie}
               />
             }
           />
 
           <Route
             path="/comics/:characterId"
-            element={<CommicsWithCharacters />}
+            element={
+              <CommicsWithCharacters
+                tokenCookie={tokenCookie}
+                setTokenCookie={setTokenCookie}
+              />
+            }
           />
 
           <Route
@@ -87,6 +96,8 @@ function App() {
                 setFavoriteArray={setFavoriteArray}
                 favoriteArrayCharacter={favoriteArrayCharacter}
                 setFavoriteArrayCharacter={setFavoriteArrayCharacter}
+                tokenCookie={tokenCookie}
+                setTokenCookie={setTokenCookie}
               />
             }
           />

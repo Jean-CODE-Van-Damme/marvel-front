@@ -1,14 +1,17 @@
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 
 const Favorites = ({
   favoriteArray,
   setFavoriteArray,
   favoriteArrayCharacter,
   setFavoriteArrayCharacter,
+  tokenCookie,
+  setTokenCookie,
 }) => {
   // console.log("favoriteArray >>>", favoriteArray);
   // console.log(favoriteArray[0].title);
-  return (
+  return tokenCookie ? (
     <div>
       <section className="favorite-comics">
         <h2>Favorites Comics</h2>
@@ -39,6 +42,8 @@ const Favorites = ({
         })}
       </section>
     </div>
+  ) : (
+    <Navigate to="/login" />
   );
 };
 

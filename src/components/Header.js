@@ -1,6 +1,7 @@
 import logoUp from "../images/marvelred.png";
 import logoDown from "../images/cinematic.png";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const Header = ({
   name,
@@ -11,8 +12,11 @@ const Header = ({
   setPage,
   limit,
   setLimit,
+  tokenCookie,
+  setTokenCookie,
 }) => {
   const location = useLocation();
+  const navigate = useNavigate();
   return (
     <header>
       <div className="container">
@@ -61,12 +65,29 @@ const Header = ({
             <Link className="link-button" to="/favorites">
               <button>Favorites</button>
             </Link>
-            <Link to="/signup" className="link-button">
-              <button>Signup</button>
-            </Link>
-            <Link to="/login" className="link-button">
-              <button>Login</button>
-            </Link>
+
+            {!tokenCookie ? (
+              <>
+                <Link to="/signup" className="link-button">
+                  <button>Signup</button>
+                </Link>
+                <Link to="/login" className="link-button">
+                  <button>Login</button>
+                </Link>
+              </>
+            ) : (
+              <div className="button-signout">
+                <button
+                  onClick={() => {
+                    Cookies.remove("cookie");
+                    setTokenCookie(null);
+                    navigate("/login");
+                  }}
+                >
+                  Signout
+                </button>
+              </div>
+            )}
           </div>
           <div className="header-div-bottom"></div>
 
@@ -99,7 +120,7 @@ const Header = ({
                     setLimit(Number(event.target.value));
                   }}
                 />
-                {/* ternaire dans une ternaire  */}
+
                 {location.pathname === "/comics" ? (
                   <label className="header-labels" htmlFor="limit">
                     Comics
