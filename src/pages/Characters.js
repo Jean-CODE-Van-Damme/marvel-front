@@ -12,6 +12,7 @@ const Characters = ({
   setLimit,
   favoriteArrayCharacter,
   setFavoriteArrayCharacter,
+  tokenCookie,
 }) => {
   const [data, setdata] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -82,12 +83,17 @@ const Characters = ({
                       </Link>
                       <div
                         className="character-favorite"
-                        onClick={() => {
+                        onClick={async () => {
                           let copyFavoriteArrayCharacter = [
                             ...favoriteArrayCharacter,
                           ];
                           copyFavoriteArrayCharacter.push(element);
                           setFavoriteArrayCharacter(copyFavoriteArrayCharacter);
+
+                          const response2 = await axios.post(
+                            `http://localhost:3002/user/favorite/character/${characterId}`,
+                            { tokenCookie: tokenCookie }
+                          );
                         }}
                       >
                         <FontAwesomeIcon

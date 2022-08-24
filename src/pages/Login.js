@@ -30,11 +30,7 @@ const Login = ({ tokenCookie, setTokenCookie }) => {
         expires: 5,
       });
 
-      setTokenCookie(
-        Cookies.set("cookie", response.data.token, {
-          expires: 5,
-        })
-      );
+      setTokenCookie(response.data.token);
 
       navigate("/");
     } catch (error) {

@@ -36,9 +36,8 @@ const Signup = ({ tokenCookie, setTokenCookie }) => {
 
       Cookies.set("cookie", response.data.token, { expires: 5 });
 
-      setTokenCookie(
-        Cookies.set("cookie", response.data.token, { expires: 5 })
-      );
+      setTokenCookie(response.data.token);
+
       navigate("/");
 
       //   console.log("token >>>", response.data.token);

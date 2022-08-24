@@ -56,6 +56,7 @@ function App() {
                 setFavoriteArray={setFavoriteArray}
                 favoriteArrayCharacter={favoriteArrayCharacter}
                 setFavoriteArrayCharacter={setFavoriteArrayCharacter}
+                tokenCookie={tokenCookie}
               />
             }
           />

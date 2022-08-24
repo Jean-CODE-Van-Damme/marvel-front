@@ -144,8 +144,9 @@ h2 {
 
 .all-characters {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .big-card {
@@ -154,6 +155,7 @@ h2 {
   /* border: 2px red solid; */
   display: flex;
   flex-direction: column;
+
   align-items: center;
   justify-content: space-between;
   margin-bottom: 50px;
@@ -253,10 +255,10 @@ h2 {
 /* PAGE COMICS  */
 
 .all-comics {
-  /* background-color: gold; */
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .comics {
