@@ -111,7 +111,9 @@ const Signup = ({ tokenCookie, setTokenCookie }) => {
 
         {/* Message au client non connecté */}
         {!tokenCookie && (
-          <p>Please connect you to access Comics and Favorites pages</p>
+          <p>
+            Please connect your account to access Comics and Favorites pages
+          </p>
         )}
       </form>
     </div>

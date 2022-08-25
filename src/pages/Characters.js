@@ -105,7 +105,7 @@ const Characters = ({
                           className="character-icon-heart"
                           icon="heart"
                         />
-                        <p>Add to Favorites</p>
+                        <p>Add to favorites</p>
                       </div>
                     </div>
                   </>

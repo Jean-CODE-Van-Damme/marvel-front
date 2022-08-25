@@ -86,7 +86,9 @@ const Login = ({ tokenCookie, setTokenCookie }) => {
         </Link>
         {/* Message pour le client non connecte  */}
         {!tokenCookie && (
-          <p>Please connect you to access Comics and Favorites pages</p>
+          <p>
+            Please connect your account to access Comics and Favorites pages
+          </p>
         )}
       </form>
     </div>

@@ -56,6 +56,8 @@ const Comics = ({
             <div className="all-comics">
               {/* Map sur comicsArray  */}
               {comicsArray.map((element, index) => {
+                let comicId = element.comics_id;
+                console.log("comicsId >>>", comicId);
                 return (
                   <div className="comics" key={index}>
                     {element.title && (
@@ -81,11 +83,17 @@ const Comics = ({
                     )}
                     <div
                       className="comics-favorite"
-                      onClick={() => {
+                      onClick={async () => {
                         // on push dans le state favoriteArray les favoris
                         let copyFavoriteArray = [...favoriteArray];
                         copyFavoriteArray.push(element);
                         setFavoriteArray(copyFavoriteArray);
+                        // transmition comicId et token user vers le back
+
+                        const response2 = await axios.post(
+                          `http://localhost:3002/user/favorite/comic/${comicId}`,
+                          { tokenCookie: tokenCookie }
+                        );
                       }}
                     >
                       <FontAwesomeIcon
