@@ -5,15 +5,11 @@ import { Navigate } from "react-router-dom";
 
 const Comics = ({
   title,
-  setTitle,
   page,
-  setPage,
   limit,
-  setLimit,
   favoriteArray,
   setFavoriteArray,
   tokenCookie,
-  setTokenCookie,
 }) => {
   const [data, setdata] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -21,9 +17,6 @@ const Comics = ({
   useEffect(() => {
     const fetchData = async () => {
       try {
-        {
-          /* Affichage des labels selon la localisation */
-        }
         const response = await axios.get(
           `http://localhost:3002/comics?title=${title ? title : ""}&page=${
             page ? page : ""
@@ -91,6 +84,7 @@ const Comics = ({
                         // transmition comicId et token user vers le back
 
                         const response2 = await axios.post(
+                          // requete vers le back pour la gestion des favoris
                           `http://localhost:3002/user/favorite/comic/${comicId}`,
                           {
                             tokenCookie: tokenCookie,
@@ -99,6 +93,7 @@ const Comics = ({
                             picture: element.picture,
                           }
                         );
+                        // Mise a jour du state avec les donnees recues depuis le back
                         setFavoriteArray(response2.data);
                       }}
                     >

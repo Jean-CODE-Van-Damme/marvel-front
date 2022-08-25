@@ -34,8 +34,6 @@ const Signup = ({ tokenCookie, setTokenCookie }) => {
         password: password,
       });
 
-      //   console.log("response >>>", response.data);
-
       // Creation du Cookie
       Cookies.set("cookie", response.data.token, { expires: 5 });
 
@@ -44,11 +42,6 @@ const Signup = ({ tokenCookie, setTokenCookie }) => {
 
       // si ok navigation vers la page Characters.js
       navigate("/");
-
-      //   console.log("token >>>", response.data.token);
-      //   console.log("message >>>", response.data.name);
-
-      //   console.log("response >>>", response.data);
     } catch (error) {
       console.log(error.response);
     }

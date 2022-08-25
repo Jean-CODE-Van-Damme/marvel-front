@@ -1,16 +1,6 @@
-import { useState } from "react";
 import { Navigate } from "react-router-dom";
 
-const Favorites = ({
-  favoriteArray,
-  setFavoriteArray,
-  favoriteArrayCharacter,
-  setFavoriteArrayCharacter,
-  tokenCookie,
-  setTokenCookie,
-}) => {
-  // console.log("favoriteArray >>>", favoriteArray);
-  // console.log(favoriteArray[0].title);
+const Favorites = ({ favoriteArray, favoriteArrayCharacter, tokenCookie }) => {
   // Si il y a un token
   return tokenCookie ? (
     <div>

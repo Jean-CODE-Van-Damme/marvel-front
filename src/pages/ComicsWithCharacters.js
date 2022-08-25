@@ -2,12 +2,11 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
 
-const CommicsWithCharacters = ({ tokenCookie, setTokenCookie }) => {
+const CommicsWithCharacters = ({ tokenCookie }) => {
   const [data, setData] = useState({});
   const [data2, setData2] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { characterId } = useParams();
-  // console.log("characterId >>>", characterId);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,8 +24,6 @@ const CommicsWithCharacters = ({ tokenCookie, setTokenCookie }) => {
 
         setData(response.data);
         setData2(response2.data);
-        // console.log("response >>>", response.data);
-        // console.log("characterName >>>", response2.data.character_name);
       } catch (error) {
         console.log(error.response);
       }
@@ -37,7 +34,6 @@ const CommicsWithCharacters = ({ tokenCookie, setTokenCookie }) => {
 
   let nameOfPrincipalCharacter = data2.character_name;
   const comicswithcharacterArray = data.arrayOfComics;
-  // console.log("comicswithcharacterArray >>>", comicswithcharacterArray);
 
   // Si il y a un token
   return tokenCookie ? (

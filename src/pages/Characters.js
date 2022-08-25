@@ -5,12 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Characters = ({
   name,
-  setName,
   page,
-  setPage,
   limit,
-  setLimit,
-  favoriteArrayCharacter,
   setFavoriteArrayCharacter,
   tokenCookie,
 }) => {
@@ -27,8 +23,6 @@ const Characters = ({
           }&limit=${limit}`
         );
         setdata(response.data);
-        // console.log("datacharacter >>>", response.data.characters);
-        // console.log("numberOgPages >>>", response.data.numberOfPages);
       } catch (error) {
         console.log(error.response);
       }
@@ -88,12 +82,6 @@ const Characters = ({
                       <div
                         className="character-favorite"
                         onClick={async () => {
-                          // on push dans le state favoriteArray les favoris
-                          // let copyFavoriteArrayCharacter = [
-                          //   ...favoriteArrayCharacter,
-                          // ];
-                          // copyFavoriteArrayCharacter.push(element);
-                          // setFavoriteArrayCharacter(copyFavoriteArrayCharacter);
                           // transmition characterId et cookieToken vers le back : gestion de sfavoris
                           const response2 = await axios.post(
                             `http://localhost:3002/user/favorite/character/${characterId}`,
@@ -105,6 +93,7 @@ const Characters = ({
                             }
                           );
                           console.log("R2 >>>", response2.data);
+                          //Mise a jour du state avec les donnees depuis le back
                           setFavoriteArrayCharacter(response2.data);
                         }}
                       >
