@@ -13,10 +13,6 @@ a {
   margin: 40px;
 }
 
-/* section {
-  color: white;
-} */
-
 body {
   background-color: black;
 }
@@ -26,7 +22,6 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
-  /* background-color: gold; */
 }
 
 h2 {
@@ -52,7 +47,6 @@ h2 {
   justify-content: space-around;
   align-items: flex-start;
   padding: 20px 0;
-  /* border: 2px blue solid; */
 }
 
 .header-div-top-left {
@@ -60,7 +54,6 @@ h2 {
 
   width: 50%;
   height: 100%;
-  /* background-color: green; */
 }
 
 .header-div-top-right {
@@ -68,7 +61,6 @@ h2 {
   height: 100%;
   display: flex;
   justify-content: space-between;
-  /* background-color: rgb(185, 153, 153); */
 }
 
 .header-div-top input {
@@ -85,14 +77,11 @@ h2 {
 .link-button {
   width: 18%;
   height: 40%;
-  /* border: 2px green solid; */
-  /* background-color: gold; */
 }
 
 .button-signout {
   width: 20%;
   height: 40%;
-  /* border: 2px green solid; */
 }
 
 .header-div-top button {
@@ -137,7 +126,6 @@ h2 {
 
 .header-pagination {
   margin: 0 auto;
-  /* background-color: gold; */
   width: 50%;
   height: 70px;
   margin: 0 auto;
@@ -151,7 +139,6 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* background-color: blue; */
 }
 
 .header-filters {
@@ -181,7 +168,6 @@ h2 {
 .big-card {
   width: 31%;
   height: 500px;
-  /* border: 2px red solid; */
   display: flex;
   flex-direction: column;
 
@@ -203,14 +189,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  /* margin-bottom: 50px; */
-  /* padding: 10px; */
   background-color: white;
-  /* background-color: #ff0000; */
-  /* border-radius: 10px; */
-  /* box-shadow: 5px 5px 5px #ff0000; */
-  /* text-decoration: none; */
-  /* border: 3px blue solid; */
 }
 .character-favorite {
   width: 80%;
@@ -236,7 +215,6 @@ h2 {
   align-items: center;
   width: 100%;
   height: 10%;
-  /* background-color: pink; */
   font-size: 1.3rem;
   font-weight: bold;
   color: #ff0000;
@@ -246,7 +224,6 @@ h2 {
 .character-img {
   width: 100%;
   height: 40%;
-  /* border: 4px blue solid; */
 }
 
 .character-img img {
@@ -269,7 +246,6 @@ h2 {
   text-align: justify;
   width: 100%;
   height: 30%;
-  /* background-color: green; */
   font-size: 1rem;
   line-height: 20px;
   overflow: auto;
@@ -294,7 +270,6 @@ h2 {
 .comics {
   width: 31%;
   height: 500px;
-  /* border: 2px red solid; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -315,7 +290,6 @@ h2 {
   width: 100%;
   height: 12%;
   margin-bottom: 15px;
-  /* background-color: pink; */
   font-size: 1rem;
   font-weight: bold;
   color: white;
@@ -325,7 +299,6 @@ h2 {
 .comics-img {
   width: 100%;
   height: 40%;
-  /* border: 4px blue solid; */
 }
 
 .comics-img img {
@@ -362,7 +335,6 @@ h2 {
   text-align: justify;
   width: 100%;
   height: 40%;
-  /* background-color: green; */
   font-size: 1rem;
   line-height: 20px;
   overflow: auto;
@@ -404,7 +376,6 @@ h2 {
 .comic-with-character {
   width: 31%;
   height: 500px;
-  /* border: 2px red solid; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -412,7 +383,6 @@ h2 {
   margin-bottom: 50px;
   padding: 10px;
   background-color: white;
-  /* background-color: #ff0000; */
   border-radius: 10px;
   box-shadow: 5px 5px 5px #ff0000;
   text-decoration: none;
@@ -425,7 +395,6 @@ h2 {
   align-items: center;
   width: 100%;
   height: 20%;
-  /* background-color: pink; */
   font-size: 1.2rem;
   font-weight: bold;
   color: #ff0000;
@@ -435,7 +404,6 @@ h2 {
 .comic-with-character-img {
   width: 100%;
   height: 40%;
-  /* border: 4px blue solid; */
 }
 
 .comic-with-character-img img {
@@ -458,7 +426,6 @@ h2 {
   padding: 10px;
   box-sizing: border-box;
   color: black;
-  /* background-color: green; */
 }
 
 .comic-with-character-descitpion::-webkit-scrollbar {
@@ -485,7 +452,6 @@ h2 {
   background-color: white;
   border-radius: 5px;
   box-shadow: 2px 2px 2px #ff0000;
-  /* border: 2px red solid; */
 }
 
 .signup-div {
@@ -494,7 +460,6 @@ h2 {
   align-items: center;
   width: 60%;
   height: 10%;
-  /* border: 2px yellow solid; */
   border-bottom: 1px #ff0000 solid;
 }
 
@@ -546,7 +511,6 @@ h2 {
   background-color: white;
   border-radius: 5px;
   box-shadow: 2px 2px 2px #ff0000;
-  /* border: 2px red solid; */
 }
 
 .login-div {
@@ -555,7 +519,6 @@ h2 {
   align-items: center;
   width: 60%;
   height: 10%;
-  /* border: 2px yellow solid; */
   border-bottom: 1px #ff0000 solid;
 }
 
@@ -597,8 +560,6 @@ h2 {
   gap: 20px;
   border-radius: 10px;
   padding: 30px;
-
-  /* padding: 20px; */
 }
 
 .favorite-characters {
@@ -609,8 +570,6 @@ h2 {
   gap: 20px;
   border-radius: 10px;
   padding: 30px;
-
-  /* padding: 20px; */
 }
 
 .favorite-comic {
@@ -717,7 +676,6 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* border: 2px blue solid; */
   }
 
   .header-div-top-left {
