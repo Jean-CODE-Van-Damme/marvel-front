@@ -89,16 +89,23 @@ const Characters = ({
                         className="character-favorite"
                         onClick={async () => {
                           // on push dans le state favoriteArray les favoris
-                          let copyFavoriteArrayCharacter = [
-                            ...favoriteArrayCharacter,
-                          ];
-                          copyFavoriteArrayCharacter.push(element);
-                          setFavoriteArrayCharacter(copyFavoriteArrayCharacter);
+                          // let copyFavoriteArrayCharacter = [
+                          //   ...favoriteArrayCharacter,
+                          // ];
+                          // copyFavoriteArrayCharacter.push(element);
+                          // setFavoriteArrayCharacter(copyFavoriteArrayCharacter);
                           // transmition characterId et cookieToken vers le back : gestion de sfavoris
                           const response2 = await axios.post(
                             `http://localhost:3002/user/favorite/character/${characterId}`,
-                            { tokenCookie: tokenCookie }
+                            {
+                              tokenCookie: tokenCookie,
+                              name: element.name,
+                              description: element.description,
+                              picture: element.picture,
+                            }
                           );
+                          console.log("R2 >>>", response2.data);
+                          setFavoriteArrayCharacter(response2.data);
                         }}
                       >
                         <FontAwesomeIcon

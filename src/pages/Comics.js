@@ -92,8 +92,14 @@ const Comics = ({
 
                         const response2 = await axios.post(
                           `http://localhost:3002/user/favorite/comic/${comicId}`,
-                          { tokenCookie: tokenCookie }
+                          {
+                            tokenCookie: tokenCookie,
+                            title: element.title,
+                            description: element.description,
+                            picture: element.picture,
+                          }
                         );
+                        setFavoriteArray(response2.data);
                       }}
                     >
                       <FontAwesomeIcon
