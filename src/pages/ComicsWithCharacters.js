@@ -12,10 +12,13 @@ const CommicsWithCharacters = ({ tokenCookie, setTokenCookie }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // requete vers le back vers la route comics/:character id pour afficher les comics
+        // avec un charachter precis
         const response = await axios.get(
           `http://localhost:3002/comics/${characterId}`
         );
-
+        // requete vers le back vers la route character/;character id pour recup
+        // l img du charcacter principal
         const response2 = await axios.get(
           `http://localhost:3002/character/${characterId}`
         );
@@ -36,9 +39,11 @@ const CommicsWithCharacters = ({ tokenCookie, setTokenCookie }) => {
   const comicswithcharacterArray = data.arrayOfComics;
   // console.log("comicswithcharacterArray >>>", comicswithcharacterArray);
 
+  // Si il y a un token
   return tokenCookie ? (
     <>
       <div>
+        {/* Si en chargement  */}
         {isLoading ? (
           <p>Chargement</p>
         ) : (
@@ -55,6 +60,7 @@ const CommicsWithCharacters = ({ tokenCookie, setTokenCookie }) => {
               </div>
 
               <div className="all-comic-with-character">
+                {/* map de comicswithcharacterArray */}
                 {comicswithcharacterArray.map((element) => {
                   return (
                     <div className="comic-with-character" key={element._id}>
@@ -92,6 +98,7 @@ const CommicsWithCharacters = ({ tokenCookie, setTokenCookie }) => {
       </div>
     </>
   ) : (
+    // Si il n y a pas de token : navgation directe vers la page Login.js
     <Navigate to="/login" />
   );
 };

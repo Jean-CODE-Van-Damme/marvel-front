@@ -12,6 +12,7 @@ const Signup = ({ tokenCookie, setTokenCookie }) => {
 
   const fetchData = async () => {
     try {
+      // Gestion des input vide dans le Front
       if (!username) {
         alert("Please enter a Username");
       }
@@ -26,6 +27,7 @@ const Signup = ({ tokenCookie, setTokenCookie }) => {
 
       setIsLoading(true);
 
+      // requete vers le back vers la route signup avec en param username, email, password
       const response = await axios.post("http://localhost:3002/user/signup", {
         username: username,
         email: email,
@@ -34,10 +36,13 @@ const Signup = ({ tokenCookie, setTokenCookie }) => {
 
       //   console.log("response >>>", response.data);
 
+      // Creation du Cookie
       Cookies.set("cookie", response.data.token, { expires: 5 });
 
+      // Mise a jour du state avec la valeur du token recu
       setTokenCookie(response.data.token);
 
+      // si ok navigation vers la page Characters.js
       navigate("/");
 
       //   console.log("token >>>", response.data.token);
@@ -99,9 +104,15 @@ const Signup = ({ tokenCookie, setTokenCookie }) => {
         </div>
         {isLoading ? <p>Chargement</p> : <button>Signup</button>}
 
+        {/* Lien vers la page Login.js pour le client qui a deja un compte  */}
         <Link to="/login">
           <p className="signup-end">Tu as Déja un compte? Connecte-toi !</p>
         </Link>
+
+        {/* Message au client non connecté */}
+        {!tokenCookie && (
+          <p>Please connect you to access Comics and Favorites pages</p>
+        )}
       </form>
     </div>
   );

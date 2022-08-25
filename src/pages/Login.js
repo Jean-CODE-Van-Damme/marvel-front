@@ -11,6 +11,7 @@ const Login = ({ tokenCookie, setTokenCookie }) => {
 
   const fetchData = async () => {
     try {
+      // Gestion de l absence de donnees en input dans le Front
       if (!email) {
         alert("Please enter your Email");
       }
@@ -20,18 +21,22 @@ const Login = ({ tokenCookie, setTokenCookie }) => {
       }
 
       setIsLoading(true);
+      // requete vers le back vers la route login avec en param : email et password
       const response = await axios.post("http://localhost:3002/user/login", {
         email: email,
         password: password,
       });
       console.log("loginresponse >>>", response.data);
 
+      // Creation du Cookie
       Cookies.set("cookie", response.data.token, {
         expires: 5,
       });
 
+      // Mise a jour du state avec le token recu
       setTokenCookie(response.data.token);
 
+      // si ok navigation vers la route Characters.js
       navigate("/");
     } catch (error) {
       console.log(error.response);
@@ -75,9 +80,11 @@ const Login = ({ tokenCookie, setTokenCookie }) => {
         </div>
         {isLoading ? <p>Chargement</p> : <button>Login</button>}
 
+        {/* Lien vers la page signup si le client n a pas encore de compte  */}
         <Link to="/signup">
           <p className="login-end">Pas encore de compte ? Inscris-toi !</p>
         </Link>
+        {/* Message pour le client non connecte  */}
         {!tokenCookie && (
           <p>Please connect you to access Comics and Favorites pages</p>
         )}

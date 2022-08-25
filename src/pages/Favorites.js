@@ -11,12 +11,14 @@ const Favorites = ({
 }) => {
   // console.log("favoriteArray >>>", favoriteArray);
   // console.log(favoriteArray[0].title);
+  // Si il y a un token
   return tokenCookie ? (
     <div>
       <div className="container">
         <section>
           <h2>Favorites Comics</h2>
           <div className="favorite-comics">
+            {/* map sur le state favoriteArray >>> Comics favoris  */}
             {favoriteArray.map((element) => {
               return (
                 <div className="favorite-comic">
@@ -41,6 +43,7 @@ const Favorites = ({
         <section>
           <h2>Favorites Heroes</h2>
           <div className="favorite-characters">
+            {/* map sur le state favoriteArrayCharacter >>> Characters favoris  */}
             {favoriteArrayCharacter.map((element) => {
               return (
                 <div className="favorite-character">
@@ -66,6 +69,7 @@ const Favorites = ({
       </div>
     </div>
   ) : (
+    // Si il n y a pas de token : Navigation directe vers la page Login.js
     <Navigate to="/login" />
   );
 };

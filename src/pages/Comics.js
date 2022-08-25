@@ -21,6 +21,9 @@ const Comics = ({
   useEffect(() => {
     const fetchData = async () => {
       try {
+        {
+          /* Affichage des labels selon la localisation */
+        }
         const response = await axios.get(
           `http://localhost:3002/comics?title=${title ? title : ""}&page=${
             page ? page : ""
@@ -37,11 +40,13 @@ const Comics = ({
     fetchData();
   }, [title, page, limit]);
 
+  // recuperation du array de Comics depuis la date
   const comicsArray = data.comics;
   // console.log("comicsArray >>>", comicsArray);
 
   return tokenCookie ? (
     <div>
+      {/* Si chargement  */}
       {isLoading ? (
         <p className="chargement">Chargement</p>
       ) : (
@@ -49,6 +54,7 @@ const Comics = ({
           <h2 className="h2-comics">Comics</h2>
           <div className="container">
             <div className="all-comics">
+              {/* Map sur comicsArray  */}
               {comicsArray.map((element, index) => {
                 return (
                   <div className="comics" key={index}>
@@ -76,6 +82,7 @@ const Comics = ({
                     <div
                       className="comics-favorite"
                       onClick={() => {
+                        // on push dans le state favoriteArray les favoris
                         let copyFavoriteArray = [...favoriteArray];
                         copyFavoriteArray.push(element);
                         setFavoriteArray(copyFavoriteArray);

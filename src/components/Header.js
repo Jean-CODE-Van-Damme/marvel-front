@@ -23,6 +23,7 @@ const Header = ({
         <div className="header-div">
           <div className="header-div-top">
             <div className="header-div-top-left">
+              {/* Lien vers la page Charcater.s  */}
               <Link className="link-logo" to="/">
                 <div className="header-logo">
                   <img className="logo-top" src={logoUp} alt="Logo Marvel" />
@@ -33,7 +34,8 @@ const Header = ({
                   />
                 </div>
               </Link>
-
+              {/* type d input de recherche selon la localisation avec useLocation () */}
+              {/* si on est sur la page Character.js */}
               {location.pathname === "/" ? (
                 <input
                   type="search"
@@ -44,7 +46,7 @@ const Header = ({
                   }}
                 />
               ) : null}
-
+              {/* si on est sur la page Comics.js */}
               {location.pathname === "/comics" ? (
                 <input
                   type="search"
@@ -69,6 +71,7 @@ const Header = ({
                 <button>Favorites</button>
               </Link>
 
+              {/* Si il n y a pas de cookie dans le state  */}
               {!tokenCookie ? (
                 <>
                   <Link to="/signup" className="link-button">
@@ -80,6 +83,7 @@ const Header = ({
                 </>
               ) : (
                 <div className="button-signout">
+                  {/* Si il  a pas 1 cookie dans le state  */}
                   <button
                     onClick={() => {
                       Cookies.remove("cookie");
@@ -95,6 +99,8 @@ const Header = ({
           </div>
           <div className="header-div-bottom"></div>
 
+          {/* Affichage ou non de la pagination selon la localisation */}
+          {/* sur la pgae Comics.js */}
           {location.pathname === "/comics" ? (
             <div className="header-pagination">
               <div className="pagination">
@@ -125,26 +131,15 @@ const Header = ({
                   }}
                 />
 
-                {location.pathname === "/comics" ? (
-                  <label className="header-labels" htmlFor="limit">
-                    Comics
-                  </label>
-                ) : location.pathname === "/" ? (
-                  <label className="header-labels" htmlFor="limit">
-                    Heroes
-                  </label>
-                ) : location.pathname === "/favorites" ? (
-                  <label className="header-labels" htmlFor="limit">
-                    Favorites Comics and Heroes
-                  </label>
-                ) : (
-                  <label className="header-labels" htmlFor="limit">
-                    Comics with your hero
-                  </label>
-                )}
+                {/* Affichage des labels selon la localisation */}
+
+                <label className="header-labels" htmlFor="limit">
+                  Comics
+                </label>
               </div>
             </div>
-          ) : location.pathname === "/" ? (
+          ) : // Sur la page Character.js
+          location.pathname === "/" ? (
             <div className="header-pagination">
               <div className="pagination">
                 <input
@@ -173,7 +168,7 @@ const Header = ({
                     setLimit(Number(event.target.value));
                   }}
                 />
-
+                {/* Affichage des labels selon la localisation */}
                 {location.pathname === "/comics" ? (
                   <label className="header-labels" htmlFor="limit">
                     Comics

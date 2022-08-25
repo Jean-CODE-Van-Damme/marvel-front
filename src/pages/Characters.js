@@ -20,6 +20,7 @@ const Characters = ({
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // requete vers le back avec param name, page et limit
         const response = await axios.get(
           `http://localhost:3002/characters?name=${name ? name : ""}&page=${
             page ? page : ""
@@ -36,11 +37,12 @@ const Characters = ({
     fetchData();
   }, [name, page, limit]);
 
+  // recup tableau des characters depuis la data
   const charachtersArray = data.characters;
-  // console.log("array >>>", charachtersArray);
 
   return (
     <div>
+      {/* Si chargment en cours  */}
       {isLoading ? (
         <p className="chargement">Chargement</p>
       ) : (
@@ -48,12 +50,14 @@ const Characters = ({
           <h2>Heroes</h2>
           <div className="container">
             <div className="all-characters">
+              {/* map de charactersArray */}
               {charachtersArray.map((element) => {
                 let characterId = element._id;
                 // console.log("id >>>", characterId);
                 return (
                   <>
                     <div className="big-card">
+                      {/* Lien vers la page /comics/:characterId */}
                       <Link
                         className="character"
                         to={`/comics/${characterId}`}
@@ -84,12 +88,13 @@ const Characters = ({
                       <div
                         className="character-favorite"
                         onClick={async () => {
+                          // on push dans le state favoriteArray les favoris
                           let copyFavoriteArrayCharacter = [
                             ...favoriteArrayCharacter,
                           ];
                           copyFavoriteArrayCharacter.push(element);
                           setFavoriteArrayCharacter(copyFavoriteArrayCharacter);
-
+                          // transmition characterId et cookieToken vers le back : gestion de sfavoris
                           const response2 = await axios.post(
                             `http://localhost:3002/user/favorite/character/${characterId}`,
                             { tokenCookie: tokenCookie }
