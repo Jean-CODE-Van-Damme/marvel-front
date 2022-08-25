@@ -43,7 +43,7 @@ const Comics = ({
   return tokenCookie ? (
     <div>
       {isLoading ? (
-        <p>Chargement</p>
+        <p className="chargement">Chargement</p>
       ) : (
         <div>
           <h2 className="h2-comics">Comics</h2>

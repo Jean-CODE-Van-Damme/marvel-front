@@ -42,7 +42,7 @@ const Characters = ({
   return (
     <div>
       {isLoading ? (
-        <p>Chargement</p>
+        <p className="chargement">Chargement</p>
       ) : (
         <div>
           <h2>Heroes</h2>

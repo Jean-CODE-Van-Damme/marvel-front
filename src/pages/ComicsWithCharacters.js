@@ -43,8 +43,8 @@ const CommicsWithCharacters = ({ tokenCookie, setTokenCookie }) => {
           <p>Chargement</p>
         ) : (
           <div>
-            <h2>Commics with {nameOfPrincipalCharacter}</h2>
-
+            <h2 className="cwc-h2">Commics with {nameOfPrincipalCharacter}</h2>
+            -he
             <div className="container">
               <div className="comic-with-character-principal">
                 <img

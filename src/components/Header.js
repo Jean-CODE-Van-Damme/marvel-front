@@ -22,72 +22,76 @@ const Header = ({
       <div className="container">
         <div className="header-div">
           <div className="header-div-top">
-            <Link className="link-logo" to="/">
-              <div className="header-logo">
-                <img className="logo-top" src={logoUp} alt="Logo Marvel" />
-                <img
-                  className="logo-bottom"
-                  src={logoDown}
-                  alt="Cinematique universelle"
-                />
-              </div>
-            </Link>
+            <div className="header-div-top-left">
+              <Link className="link-logo" to="/">
+                <div className="header-logo">
+                  <img className="logo-top" src={logoUp} alt="Logo Marvel" />
+                  <img
+                    className="logo-bottom"
+                    src={logoDown}
+                    alt="Cinematique universelle"
+                  />
+                </div>
+              </Link>
 
-            {location.pathname === "/" ? (
-              <input
-                type="search"
-                placeholder="🔍"
-                value={name}
-                onChange={(event) => {
-                  setName(event.target.value);
-                }}
-              />
-            ) : null}
-
-            {location.pathname === "/comics" ? (
-              <input
-                type="search"
-                placeholder="🔍"
-                value={title}
-                onChange={(event) => {
-                  setTitle(event.target.value);
-                }}
-              />
-            ) : null}
-
-            <Link className="link-button" to="/">
-              <button>Heroes</button>
-            </Link>
-
-            <Link className="link-button" to="/comics">
-              <button>Comics</button>
-            </Link>
-            <Link className="link-button" to="/favorites">
-              <button>Favorites</button>
-            </Link>
-
-            {!tokenCookie ? (
-              <>
-                <Link to="/signup" className="link-button">
-                  <button>Signup</button>
-                </Link>
-                <Link to="/login" className="link-button">
-                  <button>Login</button>
-                </Link>
-              </>
-            ) : (
-              <div className="button-signout">
-                <button
-                  onClick={() => {
-                    Cookies.remove("cookie");
-                    setTokenCookie(null);
-                    navigate("/login");
+              {location.pathname === "/" ? (
+                <input
+                  type="search"
+                  placeholder="🔍"
+                  value={name}
+                  onChange={(event) => {
+                    setName(event.target.value);
                   }}
-                >
-                  Signout
-                </button>
-              </div>
-            )}
+                />
+              ) : null}
+
+              {location.pathname === "/comics" ? (
+                <input
+                  type="search"
+                  placeholder="🔍"
+                  value={title}
+                  onChange={(event) => {
+                    setTitle(event.target.value);
+                  }}
+                />
+              ) : null}
+            </div>
+
+            <div className="header-div-top-right">
+              <Link className="link-button" to="/">
+                <button>Heroes</button>
+              </Link>
+
+              <Link className="link-button" to="/comics">
+                <button>Comics</button>
+              </Link>
+              <Link className="link-button" to="/favorites">
+                <button>Favorites</button>
+              </Link>
+
+              {!tokenCookie ? (
+                <>
+                  <Link to="/signup" className="link-button">
+                    <button>Signup</button>
+                  </Link>
+                  <Link to="/login" className="link-button">
+                    <button>Login</button>
+                  </Link>
+                </>
+              ) : (
+                <div className="button-signout">
+                  <button
+                    onClick={() => {
+                      Cookies.remove("cookie");
+                      setTokenCookie(null);
+                      navigate("/login");
+                    }}
+                  >
+                    Signout
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
           <div className="header-div-bottom"></div>
 
