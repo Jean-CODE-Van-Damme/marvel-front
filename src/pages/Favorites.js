@@ -12,13 +12,15 @@ const Favorites = ({ tokenCookie }) => {
       try {
         // requete vers route get pour recup tab des characters favoris
         const response = await axios.get(
-          `  https://marvel-back-63.herokuapp.com/user/favorite/character/${tokenCookie}`
+          `  https://marvel-back-63.herokuapp.com/user/favorite/character`,
+          { headers: { Authorization: tokenCookie } }
         );
         console.log(response.data);
 
         // requete vers route get pour recup tab des comics favoris
         const response2 = await axios.get(
-          `  https://marvel-back-63.herokuapp.com/user/favorite/comic/${tokenCookie}`
+          `  https://marvel-back-63.herokuapp.com/user/favorite/comic`,
+          { headers: { Authorization: tokenCookie } }
         );
 
         console.log(response2.data);

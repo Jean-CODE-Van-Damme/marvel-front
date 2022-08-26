@@ -71,16 +71,16 @@ const Comics = ({ title, page, limit, tokenCookie }) => {
                       className="comics-favorite"
                       onClick={async () => {
                         // transmition comicId et cookieToken vers le back : gestion de sfavoris
-
+                        console.log({ tokenCookie });
                         const response2 = await axios.post(
                           // requete vers le back pour la gestion des favoris
-                          `  https://marvel-back-63.herokuapp.com/user/favorite/comic/${comicId}`,
+                          `https://marvel-back-63.herokuapp.com/user/favorite/comic/${comicId}`,
                           {
-                            tokenCookie: tokenCookie,
                             title: element.title,
                             description: element.description,
                             picture: element.picture,
-                          }
+                          },
+                          { headers: { Authorization: tokenCookie } }
                         );
                         console.log(response2);
                       }}

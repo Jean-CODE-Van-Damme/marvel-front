@@ -81,11 +81,11 @@ const Characters = ({ name, page, limit, tokenCookie }) => {
                           const response2 = await axios.post(
                             `  https://marvel-back-63.herokuapp.com/user/favorite/character/${characterId}`,
                             {
-                              tokenCookie: tokenCookie,
                               name: element.name,
                               description: element.description,
                               picture: element.picture,
-                            }
+                            },
+                            { headers: { Authorization: tokenCookie } }
                           );
                           console.log(response2);
                         }}
