@@ -92,9 +92,9 @@ const Characters = ({
                               picture: element.picture,
                             }
                           );
-                          console.log("R2 >>>", response2.data);
+                          // console.log("R2 >>>", response2.data);
                           //Mise a jour du state avec les donnees depuis le back
-                          setFavoriteArrayCharacter(response2.data);
+                          // setFavoriteArrayCharacter(response2.data);
                         }}
                       >
                         <FontAwesomeIcon

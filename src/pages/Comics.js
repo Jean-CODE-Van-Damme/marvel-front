@@ -94,7 +94,7 @@ const Comics = ({
                           }
                         );
                         // Mise a jour du state avec les donnees recues depuis le back
-                        setFavoriteArray(response2.data);
+                        // setFavoriteArray(response2.data);
                       }}
                     >
                       <FontAwesomeIcon
