@@ -12,13 +12,13 @@ const Favorites = ({ tokenCookie }) => {
       try {
         // requete vers route get pour recup tab des characters favoris
         const response = await axios.get(
-          `http://localhost:3002/user/favorite/character/${tokenCookie}`
+          `  https://marvel-back-63.herokuapp.com/user/favorite/character/${tokenCookie}`
         );
         console.log(response.data);
 
         // requete vers route get pour recup tab des comics favoris
         const response2 = await axios.get(
-          `http://localhost:3002/user/favorite/comic/${tokenCookie}`
+          `  https://marvel-back-63.herokuapp.com/user/favorite/comic/${tokenCookie}`
         );
 
         console.log(response2.data);

@@ -14,12 +14,12 @@ const CommicsWithCharacters = ({ tokenCookie }) => {
         // requete vers le back vers la route comics/:character id pour afficher les comics
         // avec un charachter precis
         const response = await axios.get(
-          `http://localhost:3002/comics/${characterId}`
+          `  https://marvel-back-63.herokuapp.com/comics/${characterId}`
         );
         // requete vers le back vers la route character/;character id pour recup
         // l img du charcacter principal
         const response2 = await axios.get(
-          `http://localhost:3002/character/${characterId}`
+          `  https://marvel-back-63.herokuapp.com/character/${characterId}`
         );
 
         setData(response.data);

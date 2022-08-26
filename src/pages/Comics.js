@@ -11,9 +11,9 @@ const Comics = ({ title, page, limit, tokenCookie }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3002/comics?title=${title ? title : ""}&page=${
-            page ? page : ""
-          }&limit=${limit && limit}`
+          `  https://marvel-back-63.herokuapp.com/comics?title=${
+            title ? title : ""
+          }&page=${page ? page : ""}&limit=${limit && limit}`
         );
         setdata(response.data);
         // console.log("dataComics >>>", response.data);
@@ -74,7 +74,7 @@ const Comics = ({ title, page, limit, tokenCookie }) => {
 
                         const response2 = await axios.post(
                           // requete vers le back pour la gestion des favoris
-                          `http://localhost:3002/user/favorite/comic/${comicId}`,
+                          `  https://marvel-back-63.herokuapp.com/user/favorite/comic/${comicId}`,
                           {
                             tokenCookie: tokenCookie,
                             title: element.title,
@@ -82,6 +82,7 @@ const Comics = ({ title, page, limit, tokenCookie }) => {
                             picture: element.picture,
                           }
                         );
+                        console.log(response2);
                       }}
                     >
                       <FontAwesomeIcon

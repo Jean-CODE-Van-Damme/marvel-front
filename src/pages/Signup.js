@@ -28,11 +28,14 @@ const Signup = ({ tokenCookie, setTokenCookie }) => {
       setIsLoading(true);
 
       // requete vers le back vers la route signup avec en param username, email, password
-      const response = await axios.post("http://localhost:3002/user/signup", {
-        username: username,
-        email: email,
-        password: password,
-      });
+      const response = await axios.post(
+        "  https://marvel-back-63.herokuapp.com/user/signup",
+        {
+          username: username,
+          email: email,
+          password: password,
+        }
+      );
 
       // Creation du Cookie
       Cookies.set("cookie", response.data.token, { expires: 5 });

@@ -12,10 +12,11 @@ const Characters = ({ name, page, limit, tokenCookie }) => {
       try {
         // requete vers le back avec param name, page et limit
         const response = await axios.get(
-          `http://localhost:3002/characters?name=${name ? name : ""}&page=${
-            page ? page : ""
-          }&limit=${limit}`
+          `  https://marvel-back-63.herokuapp.com/characters?name=${
+            name ? name : ""
+          }&page=${page ? page : ""}&limit=${limit}`
         );
+
         setdata(response.data);
       } catch (error) {
         console.log(error.response);
@@ -78,7 +79,7 @@ const Characters = ({ name, page, limit, tokenCookie }) => {
                         onClick={async () => {
                           // transmition characterId et cookieToken vers le back : gestion de sfavoris
                           const response2 = await axios.post(
-                            `http://localhost:3002/user/favorite/character/${characterId}`,
+                            `  https://marvel-back-63.herokuapp.com/user/favorite/character/${characterId}`,
                             {
                               tokenCookie: tokenCookie,
                               name: element.name,
@@ -86,6 +87,7 @@ const Characters = ({ name, page, limit, tokenCookie }) => {
                               picture: element.picture,
                             }
                           );
+                          console.log(response2);
                         }}
                       >
                         <FontAwesomeIcon
