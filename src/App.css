@@ -32,6 +32,10 @@ h2 {
   color: white;
   text-shadow: 2px 2px 2px red;
 }
+
+h2:hover {
+  color: red;
+}
 /* HEADER */
 
 .header-div {
@@ -77,11 +81,24 @@ h2 {
 .link-button {
   width: 18%;
   height: 40%;
+  /* background-color: gold; */
+}
+
+.link-button button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #ff0000;
 }
 
 .button-signout {
   width: 20%;
   height: 40%;
+}
+
+.button-signout button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #ff0000;
 }
 
 .header-div-top button {
@@ -224,6 +241,7 @@ h2 {
 .character-img {
   width: 100%;
   height: 40%;
+  overflow: hidden;
 }
 
 .character-img img {
@@ -231,6 +249,13 @@ h2 {
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+
+.character-img img:hover {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
 }
 
 .character-icon-heart {
@@ -299,6 +324,7 @@ h2 {
 .comics-img {
   width: 100%;
   height: 40%;
+  overflow: hidden;
 }
 
 .comics-img img {
@@ -306,13 +332,18 @@ h2 {
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+
+.comics-img img:hover {
+  -webkit-filter: invert(100%);
 }
 
 .comics-icon-heart {
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 1.5rem;
   color: black;
 }
@@ -364,11 +395,21 @@ h2 {
 .comic-with-character-principal-img {
   width: 50%;
   margin: 0 auto;
-  height: 400px;
+  height: 300px;
   object-fit: cover;
   margin-bottom: 80px;
   box-shadow: 2px 2px 2px #ff0000;
   border-radius: 5px;
+  background-color: gold;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+
+.comic-with-character-principal-img:hover {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  -webkit-filter: grayscale(100%);
 }
 
 .all-comic-with-character {
@@ -409,6 +450,7 @@ h2 {
 .comic-with-character-img {
   width: 100%;
   height: 40%;
+  overflow: hidden;
 }
 
 .comic-with-character-img img {
@@ -416,6 +458,12 @@ h2 {
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+
+.comic-with-character-img img:hover {
+  -webkit-filter: grayscale(100%);
 }
 
 .comic-with-character-descitpion {
@@ -623,6 +671,13 @@ h2 {
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+
+.favorite-comic-img img:hover {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
 }
 
 .favorite-comic-description {
@@ -657,6 +712,13 @@ h2 {
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+
+.favorite-character-img img:hover {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
 }
 
 .favorite-character-description {
