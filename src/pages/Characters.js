@@ -3,13 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Characters = ({
-  name,
-  page,
-  limit,
-  setFavoriteArrayCharacter,
-  tokenCookie,
-}) => {
+const Characters = ({ name, page, limit, tokenCookie }) => {
   const [data, setdata] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -92,9 +86,6 @@ const Characters = ({
                               picture: element.picture,
                             }
                           );
-                          // console.log("R2 >>>", response2.data);
-                          //Mise a jour du state avec les donnees depuis le back
-                          // setFavoriteArrayCharacter(response2.data);
                         }}
                       >
                         <FontAwesomeIcon

@@ -23,8 +23,6 @@ function App() {
   const [title, setTitle] = useState("");
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(100);
-  // const [favoriteArray, setFavoriteArray] = useState([]);
-  // const [favoriteArrayCharacter, setFavoriteArrayCharacter] = useState([]);
   const [tokenCookie, setTokenCookie] = useState(Cookies.get("cookie") || null);
   return (
     <div>
@@ -52,10 +50,6 @@ function App() {
                 setPage={setPage}
                 limit={limit}
                 setLimit={setLimit}
-                // favoriteArray={favoriteArray}
-                // setFavoriteArray={setFavoriteArray}
-                // favoriteArrayCharacter={favoriteArrayCharacter}
-                // setFavoriteArrayCharacter={setFavoriteArrayCharacter}
                 tokenCookie={tokenCookie}
               />
             }
@@ -71,8 +65,6 @@ function App() {
                 setPage={setPage}
                 limit={limit}
                 setLimit={setLimit}
-                // favoriteArray={favoriteArray}
-                // setFavoriteArray={setFavoriteArray}
                 tokenCookie={tokenCookie}
                 setTokenCookie={setTokenCookie}
               />
@@ -93,10 +85,6 @@ function App() {
             path="/favorites"
             element={
               <Favorites
-                // favoriteArray={favoriteArray}
-                // setFavoriteArray={setFavoriteArray}
-                // favoriteArrayCharacter={favoriteArrayCharacter}
-                // setFavoriteArrayCharacter={setFavoriteArrayCharacter}
                 tokenCookie={tokenCookie}
                 setTokenCookie={setTokenCookie}
               />

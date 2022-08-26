@@ -7,8 +7,7 @@ const Comics = ({
   title,
   page,
   limit,
-  favoriteArray,
-  setFavoriteArray,
+
   tokenCookie,
 }) => {
   const [data, setdata] = useState({});
@@ -89,8 +88,6 @@ const Comics = ({
                             picture: element.picture,
                           }
                         );
-                        // Mise a jour du state avec les donnees recues depuis le back
-                        // setFavoriteArray(response2.data);
                       }}
                     >
                       <FontAwesomeIcon
