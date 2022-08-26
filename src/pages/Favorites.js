@@ -32,10 +32,8 @@ const Favorites = ({ tokenCookie }) => {
     fetchData();
   }, [tokenCookie]);
 
-  const favoriteArray = data2;
-  // console.log("favoritArray", favoriteArray);
+  const favoriteArrayComic = data2;
   const favoriteArrayCharacter = data;
-  // console.log("favoritArrayCharacter", favoriteArrayCharacter);
 
   // Si il y a un token
   return tokenCookie ? (
@@ -47,8 +45,8 @@ const Favorites = ({ tokenCookie }) => {
           <section>
             <h2>Favorites Comics</h2>
             <div className="favorite-comics">
-              {/* map  favoriteArray >>> Comics favoris  */}
-              {favoriteArray.map((element) => {
+              {/* map  favoriteArrayComic >>> Comics favoris  */}
+              {favoriteArrayComic.map((element) => {
                 return (
                   <div className="favorite-comic" key={element.id}>
                     <div className="favorite-comic-name">{element.title}</div>

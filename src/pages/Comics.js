@@ -77,11 +77,7 @@ const Comics = ({
                     <div
                       className="comics-favorite"
                       onClick={async () => {
-                        // on push dans le state favoriteArray les favoris
-                        let copyFavoriteArray = [...favoriteArray];
-                        copyFavoriteArray.push(element);
-                        setFavoriteArray(copyFavoriteArray);
-                        // transmition comicId et token user vers le back
+                        // transmition comicId et cookieToken vers le back : gestion de sfavoris
 
                         const response2 = await axios.post(
                           // requete vers le back pour la gestion des favoris
