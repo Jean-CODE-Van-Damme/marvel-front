@@ -3,13 +3,7 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Navigate } from "react-router-dom";
 
-const Comics = ({
-  title,
-  page,
-  limit,
-
-  tokenCookie,
-}) => {
+const Comics = ({ title, page, limit, tokenCookie }) => {
   const [data, setdata] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
